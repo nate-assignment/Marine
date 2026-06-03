@@ -1,0 +1,213 @@
+export default function MarineAssignmentWebsite() {
+  const creatures = [
+    {
+      name: "Box Jellyfish",
+      scientific: "Chironex fleckeri",
+      classification: "Cnidarian",
+      behaviour: "Aggressor – active hunter that uses tentacles to catch prey.",
+      feeding: "Feeds on small fish and prawns using venomous tentacles.",
+      breeding: "Releases eggs and sperm into the water for external fertilisation.",
+      habitat: "Found in tropical northern Australian waters and Indo-Pacific oceans.",
+      danger: "Extremely painful sting that can cause heart failure.",
+      firstAid: "Pour vinegar over stings, remove tentacles carefully, and seek emergency medical help.",
+      map: "Northern Australia, Philippines, Malaysia, and tropical Indo-Pacific waters"
+    },
+    {
+      name: "Great White Shark",
+      scientific: "Carcharodon carcharias",
+      classification: "Fish (Cartilaginous Fish)",
+      behaviour: "Aggressor – apex predator that actively hunts prey.",
+      feeding: "Feeds on fish, seals, sea lions, and marine mammals.",
+      breeding: "Gives birth to live young after internal fertilisation.",
+      habitat: "Found in coastal and offshore waters around Australia and globally.",
+      danger: "Large size, strong bite force, and predatory behaviour can seriously injure humans.",
+      firstAid: "Control bleeding with pressure, call emergency services, and keep the injured person still.",
+      map: "Australia, South Africa, California, Mediterranean Sea, and temperate oceans worldwide"
+    },
+    {
+      name: "Blue-Ringed Octopus",
+      scientific: "Hapalochlaena",
+      classification: "Mollusc (Cephalopod)",
+      behaviour: "Retaliator – usually shy and only bites when threatened or handled.",
+      feeding: "Feeds on small crabs, shrimp, and fish using venom to paralyse prey.",
+      breeding: "Females lay eggs and protect them until hatching.",
+      habitat: "Found in tide pools, reefs, and shallow coastal waters around Australia and the Indo-Pacific.",
+      danger: "Highly venomous bite that can cause paralysis and breathing failure.",
+      firstAid: "Call emergency services immediately, apply pressure immobilisation bandage, and keep the person calm.",
+      map: "Australia, Japan, Indonesia, and Pacific coastal regions"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-blue-50 text-slate-900 font-sans">
+      <header className="bg-gradient-to-r from-blue-700 to-cyan-500 text-white p-10 text-center shadow-lg">
+        <h1 className="text-5xl font-bold mb-4">Dangerous Marine Creatures</h1>
+        <p className="text-lg max-w-3xl mx-auto">
+          Marine Biology Assignment Website – Researching dangerous marine organisms,
+          their habitats, behaviours, and safety practices.
+        </p>
+      </header>
+
+      <main className="max-w-6xl mx-auto p-6 space-y-12">
+        {creatures.map((creature, index) => (
+          <section
+            key={index}
+            className="bg-white rounded-3xl shadow-xl overflow-hidden border border-blue-100"
+          >
+            <div className="bg-cyan-600 text-white p-6">
+              <h2 className="text-4xl font-bold">{creature.name}</h2>
+              <p className="italic text-lg">{creature.scientific}</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 p-8">
+              <div className="space-y-4">
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-700">Classification</h3>
+                  <p>{creature.classification}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-700">Aggressor or Retaliator</h3>
+                  <p>{creature.behaviour}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-700">Feeding Behaviour</h3>
+                  <p>{creature.feeding}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-700">Breeding & Reproduction</h3>
+                  <p>{creature.breeding}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-blue-700">Range & Habitat</h3>
+                  <p>{creature.habitat}</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="space-y-6">
+                <div className="grid grid-cols-2 gap-4">
+                  <img
+                    src={
+                      creature.name === "Box Jellyfish"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/0/00/Chironex_fleckeri.jpg"
+                        : creature.name === "Great White Shark"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg"
+                        : "https://upload.wikimedia.org/wikipedia/commons/9/9b/Blue-ringed_octopus.jpg"
+                    }
+                    alt={creature.name}
+                    className="rounded-2xl h-56 object-cover w-full"
+                  />
+
+                  <img
+                    src={
+                      creature.name === "Box Jellyfish"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/f/f9/Box_jellyfish.jpg"
+                        : creature.name === "Great White Shark"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/5/51/Great_white_shark_close_up.JPG"
+                        : "https://upload.wikimedia.org/wikipedia/commons/0/0f/Blue-ringed-octopus.jpg"
+                    }
+                    alt={`${creature.name} diagram`}
+                    className="rounded-2xl h-56 object-cover w-full"
+                  />
+                </div>
+
+                <div className="bg-yellow-100 rounded-2xl p-5 shadow-sm">
+                  <h3 className="text-2xl font-semibold text-yellow-800 mb-3">
+                    Labelled Diagram
+                  </h3>
+
+                  <img
+                    src={
+                      creature.name === "Box Jellyfish"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/8/88/Box_Jellyfish_Anatomy.png"
+                        : creature.name === "Great White Shark"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/5/56/White_shark.jpg"
+                        : "https://upload.wikimedia.org/wikipedia/commons/3/3e/Blue_Ringed_Octopus.png"
+                    }
+                    alt={`${creature.name} labelled diagram`}
+                    className="rounded-2xl w-full max-h-80 object-cover"
+                  />
+                </div>
+
+                <div className="bg-blue-100 rounded-2xl p-5">
+                  <h3 className="text-2xl font-semibold text-blue-800">World Distribution Map</h3>
+                  <p className="mt-2 mb-4">{creature.map}</p>
+
+                  <img
+                    src={
+                      creature.name === "Box Jellyfish"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_blank_without_borders.svg"
+                        : creature.name === "Great White Shark"
+                        ? "https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_blank_without_borders.svg"
+                        : "https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_blank_without_borders.svg"
+                    }
+                    alt={`${creature.name} world map`}
+                    className="rounded-2xl w-full h-56 object-cover border"
+                  />
+                </div>
+
+                <div className="bg-slate-100 rounded-2xl p-5">
+                  <h3 className="text-2xl font-semibold text-slate-700 mb-3">
+                    Google Maps Habitat Screenshot
+                  </h3>
+
+                  <iframe
+                    title={`${creature.name} habitat map`}
+                    src={
+                      creature.name === "Box Jellyfish"
+                        ? "https://maps.google.com/maps?q=Queensland%20Australia&t=&z=4&ie=UTF8&iwloc=&output=embed"
+                        : creature.name === "Great White Shark"
+                        ? "https://maps.google.com/maps?q=South%20Australia&t=k&z=4&ie=UTF8&iwloc=&output=embed"
+                        : "https://maps.google.com/maps?q=Sydney%20Australia&t=k&z=5&ie=UTF8&iwloc=&output=embed"
+                    }
+                    className="w-full h-64 rounded-2xl border"
+                  ></iframe>
+                </div>
+              </div>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 p-8 bg-slate-50 border-t">
+              <div className="bg-red-100 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-2xl font-bold text-red-700 mb-3">
+                  Why It Is Dangerous
+                </h3>
+                <p>{creature.danger}</p>
+              </div>
+
+              <div className="bg-green-100 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-2xl font-bold text-green-700 mb-3">
+                  First Aid & Safe Marine Practices
+                </h3>
+                <p>{creature.firstAid}</p>
+              </div>
+            </div>
+          </section>
+        ))}
+
+        <section className="bg-white rounded-3xl shadow-xl p-8">
+          <h2 className="text-4xl font-bold text-blue-700 mb-6">Bibliography</h2>
+          <ul className="list-disc pl-6 space-y-3 text-lg">
+            <li>
+              Australian Museum. Marine Species Information. Retrieved from official museum resources.
+            </li>
+            <li>
+              Great Barrier Reef Marine Park Authority. Dangerous Marine Animals Guide.
+            </li>
+            <li>
+              National Geographic. Ocean Animals and Marine Life Articles.
+            </li>
+          </ul>
+        </section>
+      </main>
+
+      <footer className="bg-blue-900 text-white text-center p-6 mt-10">
+        <p>Marine Creatures Assignment Website • Created for School Research Project</p>
+      </footer>
+    </div>
+  );
+}
